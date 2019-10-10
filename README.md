@@ -1,2 +1,2 @@
 # E-Cart
-E-Commerce in Node.JS and React
+ECommerce in Node.JS and React
