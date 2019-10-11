@@ -1,9 +1,11 @@
 import React from 'react';
 
-const App = () => (
-  <div>
-    E-Cart
-  </div>
-);
+import Routes from './routes';
+
+function App() {
+  return (
+    <Routes />
+  );
+}
 
 export default App;
