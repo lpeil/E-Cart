@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import IconSendImg from './assets/place-icon.svg';
 
@@ -7,9 +8,10 @@ const LogoItem = styled.div`
     display: var(--flex);
     margin-left: 5%;
     flex-direction: var(--column);
+    width: fit-content;
 `;
 
-const LogoName = styled.div`
+const LogoName = styled(Link)`
     color: var(--color-font2);
     font-family: var(--font2);
     font-size: 40px;
@@ -50,7 +52,7 @@ const SendInputSpan = styled.span`
 
 const Logo = () => (
     <LogoItem>
-        <LogoName>E-Cart</LogoName>
+        <LogoName to="/">E-Cart</LogoName>
         <SendTo>
             <IconSend src={IconSendImg} />
             <SendWrapper>

@@ -14,6 +14,7 @@
     --column: column;
     --fixed: fixed;
     --flex: flex;
+    --space-around: space-around;
     --row: row;
 }
 
@@ -21,6 +22,7 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     background-color: var(--color-bg);
+    font-family: var(--font1);
 }
 
 body, #root {
@@ -47,6 +49,7 @@ pre {
 }
 a {
     background-color: transparent;
+    text-decoration: none;
 }
 
 

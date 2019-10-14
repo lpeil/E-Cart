@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
+import Search from './Search';
+import User from './User';
 
 const NavbarItem = styled.div`
     display: var(--flex);
@@ -15,6 +17,8 @@ const NavbarItem = styled.div`
 const Navbar = () => (
     <NavbarItem>
         <Logo />
+        <Search />
+        <User />
     </NavbarItem>
 )
 
