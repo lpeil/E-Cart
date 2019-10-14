@@ -14,6 +14,11 @@ const UserWrapper = styled.div`
 
 const UserInfo = styled(Link)`
     display: var(--flex);
+    color: var(--color-font1);
+
+    &:hover {
+        color: var(--color-font2)!important;
+    }
 `
 const UserIcon = styled.div`
     height: 32px;
@@ -22,6 +27,11 @@ const UserIcon = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    transition: 0.5s;
+
+    ${UserInfo}:hover & {
+        filter: invert(41%) sepia(46%) saturate(270%) hue-rotate(127deg) brightness(97%) contrast(88%);
+    }
 `
 
 const UserSign = styled.div`
@@ -31,12 +41,12 @@ const UserSign = styled.div`
 
 const UserSignText = styled.span`
     font-size: 14px;
-    color: var(--color-font1);
+    transition: 0.5s;
 `
 
 const UserSignLink = styled.span`
     font-size: 14px;
-    color: var(--color-font1);
+    transition: 0.5s;
 `
 
 const UserIconLink = styled(Link)`
@@ -47,6 +57,11 @@ const UserIconLink = styled(Link)`
     background-size: 25px;
     height: 32px;
     width: 32px;
+    transition: 0.5s;
+
+    &:hover {
+        filter: invert(41%) sepia(46%) saturate(270%) hue-rotate(127deg) brightness(97%) contrast(88%);
+    }
 `
 
 const User = () => (
@@ -54,7 +69,7 @@ const User = () => (
         <UserInfo to="/signin">
             <UserIcon />
             <UserSign>
-                <UserSignText>Wellcome</UserSignText>
+                <UserSignText>Welcome</UserSignText>
                 <UserSignLink>SignIn or SignUp</UserSignLink>
             </UserSign>
         </UserInfo>

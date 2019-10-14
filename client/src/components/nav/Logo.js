@@ -33,6 +33,11 @@ const IconSend = styled.img`
     width: 25px;
     height: auto;
     margin-left: -5px;
+    transition: 0.5s;
+
+    ${SendTo}:hover & {
+        filter: invert(41%) sepia(46%) saturate(270%) hue-rotate(127deg) brightness(97%) contrast(88%);
+    }
 `;
 
 const SendInput = styled.input`
@@ -42,12 +47,22 @@ const SendInput = styled.input`
     border: none;
     outline: none;
     color: var(--color-font1);
+    transition: 0.5s;
+
+    ${SendTo}:hover & {
+        color: var(--color-font2);
+    }
 `;
 
 const SendInputSpan = styled.span`
     font-size: 12px;
     font-family: var(--font1);
     color: var(--color-font1);
+    transition: 0.5s;
+
+    ${SendTo}:hover & {
+        color: var(--color-font2);
+    }
 `;
 
 const Logo = () => (

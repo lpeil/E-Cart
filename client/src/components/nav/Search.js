@@ -62,6 +62,7 @@ const DepartamentsMenu = styled.div`
     font-size: 18px;
     color: var(--color-font1);
     cursor: pointer;
+    transition: 0.5s;
 
     &::before {
         content: " ";
@@ -72,12 +73,26 @@ const DepartamentsMenu = styled.div`
         background-repeat: no-repeat;
         background-size: 14px;
         background-position: var(--center);
+        transition: 0.5s;
+    }
+
+    &:hover:before {
+        filter: invert(41%) sepia(46%) saturate(270%) hue-rotate(127deg) brightness(97%) contrast(88%);
+    }
+    
+    &:hover {
+        color: var(--color-font2);
     }
 `
 
 const DepartamentLink = styled(Link)`
     font-size: 18px;
     color: var(--color-font1);
+    transition: 0.5s;
+
+    &:hover {
+        color: var(--color-font2);
+    }
 `
 
 const Search = () => (
