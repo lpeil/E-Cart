@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import IconSendImg from './assets/place-icon.svg';
+import iconCart from './assets/cart-icon.svg';
+import iconMenu from './assets/menu-icon.svg';
 
 const LogoItem = styled.div`
     width: 15%;
@@ -9,6 +11,14 @@ const LogoItem = styled.div`
     margin-left: 5%;
     flex-direction: var(--column);
     width: fit-content;
+
+    @media (max-width: 1000px) {
+        width: 90%;
+        flex-direction: var(--row);
+        margin: 0;
+        padding: 10px 0;
+        justify-content: space-between;
+    }
 `;
 
 const LogoName = styled(Link)`
@@ -16,11 +26,19 @@ const LogoName = styled(Link)`
     font-family: var(--font2);
     font-size: 40px;
     line-height: 40px;
+
+    @media (max-width: 1000px) {
+        font-size: 30px;
+    }
 `;
 
 const SendTo = styled.div`
     display: var(--flex);
     flex-direction: var(--row);
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
 `;
 
 const SendWrapper = styled.div`
@@ -65,8 +83,24 @@ const SendInputSpan = styled.span`
     }
 `;
 
+const IconMenu = styled.span`
+    display: none;
+
+    @media (max-width: 1000px) {
+        height: 30px;
+        width: 30px;
+        display: block;
+        margin: 5px 0;
+        background-image: url(${props => props.image});
+        background-position: var(--center);
+        background-size: 25px;
+        background-repeat: no-repeat;
+    }
+`
+
 const Logo = () => (
     <LogoItem>
+        <IconMenu image={iconMenu} />
         <LogoName to="/">E-Cart</LogoName>
         <SendTo>
             <IconSend src={IconSendImg} />
@@ -75,6 +109,7 @@ const Logo = () => (
                 <SendInput value="96000-000"/>
             </SendWrapper>
         </SendTo>
+        <IconMenu image={iconCart} />
     </LogoItem>
 )
 

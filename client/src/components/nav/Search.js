@@ -10,6 +10,10 @@ const Wrapper = styled.div`
     justify-content: var(--center);
     align-items: var(--center);
     flex-direction: var(--column);
+
+    @media (max-width: 1000px) {
+        width: 100%;
+    }
 `
 
 const SearchWrapper = styled.div`
@@ -55,6 +59,10 @@ const DepartamentsWrapper = styled.div`
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: var(--center);
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
 `
 
 const DepartamentsMenu = styled.div`

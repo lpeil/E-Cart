@@ -7,10 +7,14 @@ import User from './User';
 const NavbarItem = styled.div`
     display: var(--flex);
     width: 100%;
-    height: 15vh;
+    height: 120px;
     margin: 0;
     align-items: var(--center);
     background-color: var(--color-nav);
+
+    @media (max-width: 1000px) {
+        flex-direction: var(--column);
+    }
 `;
 
 

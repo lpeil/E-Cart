@@ -10,6 +10,10 @@ const UserWrapper = styled.div`
     display: var(--flex);
     flex-direction: var(--row);
     justify-content: var(--space-around);
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
 `
 
 const UserInfo = styled(Link)`
