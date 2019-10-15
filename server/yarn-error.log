@@ -1,0 +1,61 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn add saslprep
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/peil/Android/Sdk/tools:/home/peil/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.2
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/home/peil/Área de Trabalho/codes/E-Cart/server/node_modules/define-property/node_modules/kind-of'
+
+npm manifest: 
+  {
+    "name": "ecart",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+      "start": "nodemon src/app.js"
+    },
+    "author": "Peil",
+    "license": "ISC",
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "cookie-parser": "^1.4.4",
+      "cors": "^2.8.5",
+      "dotenv": "^8.1.0",
+      "express": "^4.17.1",
+      "express-jwt": "^5.3.1",
+      "express-validator": "^5.3.1",
+      "formidable": "^1.2.1",
+      "jsonwebtoken": "^8.5.1",
+      "lodash": "^4.17.15",
+      "mongoose": "^5.7.4",
+      "morgan": "^1.9.1",
+      "nodemon": "^1.19.3",
+      "uuid": "^3.3.3"
+    },
+    "description": "E-Commerce in Node.JS and React",
+    "devDependencies": {},
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/lpeil/E-Cart.git"
+    },
+    "bugs": {
+      "url": "https://github.com/lpeil/E-Cart/issues"
+    },
+    "homepage": "https://github.com/lpeil/E-Cart#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
