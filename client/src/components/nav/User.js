@@ -51,7 +51,7 @@ const UserSignLink = styled.span`
 
 const UserIconLink = styled(Link)`
     display: block;
-    background-image: url(${props => props.imageUrl });
+    background-image: url(${props => props.imageurl });
     background-position: center;
     background-repeat: no-repeat;
     background-size: 25px;
@@ -73,8 +73,8 @@ const User = () => (
                 <UserSignLink>SignIn or SignUp</UserSignLink>
             </UserSign>
         </UserInfo>
-        <UserIconLink to="/favorites" imageUrl={iconFavorite} />
-        <UserIconLink to="/cart" imageUrl={iconCart} />
+        <UserIconLink to="/favorites" imageurl={iconFavorite} />
+        <UserIconLink to="/cart" imageurl={iconCart} />
     </UserWrapper>
 )
 
