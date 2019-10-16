@@ -75,6 +75,26 @@ const SignUpButton = styled.button`
     outline: none;
 `
 
+const ErrorDiv = styled.div`
+    width: 80%;
+    display: ${props => props.infos ? "block" : "none"};
+    margin: 10px;
+    background-color: #f44336;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+`
+
+const SuccessDiv = styled.div`
+    width: 80%;
+    display: ${props => props.infos ? "block" : "none"};
+    margin: 10px;
+    background-color: var(--color-font2);
+    color: var(--color-nav);
+    padding: 15px;
+    border-radius: 10px;
+`
+
 const SignUp = () => {
     const [values, setValues] = useState({
         name: '',
@@ -84,14 +104,14 @@ const SignUp = () => {
         success: false
     });
 
-    const { name, email, password } = values;
+    const { name, email, password, error, success } = values;
 
     const handleChange = name => event => {
         setValues({ ...values, error: false, [name]: event.target.value });
     };
 
     const signup = (user) => {
-        fetch(`${API}/signup`, {
+        return fetch(`${API}/signup`, {
             method: "POST",
             headers: {
                 Accept: "application/json",
@@ -109,8 +129,27 @@ const SignUp = () => {
 
     const clickSubmit = (event) => {
         event.preventDefault();
-        signup({ name, email, password });
+        signup({ name, email, password })
+            .then(data => {
+                if(data.error) {
+                    setValues({...values, error: data.error, success: false})
+                } else {
+                    setValues({...values, name: '', email: '', password: '', error: '', success: true})
+                }
+            })
     }
+
+    const showError = () => (
+        <ErrorDiv infos={error}>
+            {error}
+        </ErrorDiv>
+    )
+
+    const showSuccess = () => (
+        <SuccessDiv infos={success}>
+            New account created. Please Sign In.
+        </SuccessDiv>
+    )
 
     return (
     <SignupWrapper>
@@ -119,20 +158,25 @@ const SignUp = () => {
                 <HeaderText fontsize="32px">Create Your User Account</HeaderText>
                 <HeaderText fontsize="24px">It's easy and fast</HeaderText>
             </SignUpFormHeader>
+            {showSuccess()}
+            {showError()}
             <SignUpInput 
                 onChange={handleChange('name')} 
                 type="text" image={userIcon} 
                 placeholder="Name"
+                value={name}
             />
             <SignUpInput 
                 onChange={handleChange('email')} 
                 type="email" image={emailIcon} 
                 placeholder="Email"
+                value={email}
             />
             <SignUpInput 
                 onChange={handleChange('password')} 
                 type="password" image={keyIcon} 
                 placeholder="Password"
+                value={password}
             />
             <SignUpButton onClick={clickSubmit}>Submit</SignUpButton>
         </SignUpForm>

@@ -1,1 +1,3 @@
-export const API = process.env.PI_URL;
+require('dotenv').config();
+
+export const API = process.env.API_URL
