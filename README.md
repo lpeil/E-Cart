@@ -44,7 +44,7 @@ Open the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), create your datab
 
     $ git clone https://github.com/lpeil/E-Cart
     $ cd E-Cart
-    $ npm install or yarn install
+    $ npm install
     
 ## Configuration
 
@@ -53,4 +53,4 @@ Change the PORT if you want, and create your secret key.
     
 ## Running the project
 
-    $ npm start or yarn start
+    $ npm start
